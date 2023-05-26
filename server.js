@@ -7,6 +7,8 @@ import dotenv from "dotenv";
 // journaux des requêtes HTTP
 import morgan from "morgan"
 import authRoutes from './routes/AuthRoutes.js'
+import routineRoutes from './routes/RoutineRoutes.js'
+import exercicesRoutes from './routes/ExercicesRoutes.js'
 
 dotenv.config()
 
@@ -27,6 +29,9 @@ app.use(express.json())
 app.use(routes);
 
 app.use('/auth', authRoutes)
+app.use('/routines', routineRoutes)
+app.use('/exercices', exercicesRoutes)
+
 
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`)
@@ -36,3 +41,5 @@ app.use((req, res, next) => {
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
+
+
