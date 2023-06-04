@@ -34,7 +34,7 @@ export const register = async (req, res) => {
             // { expiresIn: '1h' },
             (err, token) => {
                 if (err) throw err;
-                res.json({ status: 'ok', token })
+                res.json({ status: 'ok', token, _id:user.id, fname:user.fname, lname:user.lname })
             }
         );
     } catch (err) {
@@ -65,7 +65,7 @@ export const login = async (req, res) => {
             // { expiresIn: '1h' },
             (err, token) => {
                 if (err) throw err;
-                res.json({ status: 'ok', token })
+                res.json({ status: 'ok', token, _id:user.id, fname:user.fname, lname:user.lname })
             }
         );
     } catch (err) {

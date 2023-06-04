@@ -8,7 +8,8 @@ import dotenv from "dotenv";
 import morgan from "morgan"
 import authRoutes from './routes/AuthRoutes.js'
 import routineRoutes from './routes/RoutineRoutes.js'
-import exercicesRoutes from './routes/ExercicesRoutes.js'
+import exerciseRoutes from './routes/ExercisesRoutes.js'
+import workoutRoutes from './routes/WorkOutRoutes.js'
 
 dotenv.config()
 
@@ -28,9 +29,10 @@ app.use(cors());
 app.use(express.json())
 app.use(routes);
 
-app.use('/auth', authRoutes)
-app.use('/routines', routineRoutes)
-app.use('/exercices', exercicesRoutes)
+app.use(authRoutes)
+app.use(routineRoutes)
+app.use(exerciseRoutes)
+app.use(workoutRoutes)
 
 
 app.use((req, res, next) => {

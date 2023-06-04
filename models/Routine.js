@@ -1,11 +1,16 @@
-import mongoose from "mongoose"
+// models/Routine.js
+import mongoose from 'mongoose'
 
-const RoutineShema = new mongoose.Schema({
-  title:String,
-  exercices:[String],
-  clientId:String,
+const { ObjectId } = mongoose.Schema.Types
+
+const RoutineSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  exercises: [{ type: ObjectId, ref: 'Exercise' }], 
+  clientId: { type: String, required: true },
 })
 
-const Routine = mongoose.model('Routine', RoutineShema)
+const Routine = mongoose.model('Routine', RoutineSchema)
 
 export default Routine
+
+  
