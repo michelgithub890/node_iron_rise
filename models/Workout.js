@@ -1,6 +1,6 @@
 import mongoose from "mongoose"
 
-const WorkoutSchema = new mongoose.Schema({
+export const WorkoutSchema = new mongoose.Schema({
   clientId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
   date: {
     type: Date, 
