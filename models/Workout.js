@@ -1,7 +1,12 @@
+// MONGOOSE (DATABASE)
 import mongoose from "mongoose"
 
+// SCHEMA WORKOUT 
 export const WorkoutSchema = new mongoose.Schema({
+
+  // ID CLIENT 
   clientId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+  // DATE 
   date: {
     type: Date, 
     default: () => {
@@ -10,6 +15,7 @@ export const WorkoutSchema = new mongoose.Schema({
         return date
     }
   },
+  // EXERCISES 
   exercises: [{ 
       name: String, 
       sets: Number,
@@ -18,6 +24,7 @@ export const WorkoutSchema = new mongoose.Schema({
   }]
 })
 
+// CREATE MODEL FORM SCHEMA 
 const Workout = mongoose.model('Workout', WorkoutSchema)
 
 export default Workout

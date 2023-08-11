@@ -1,10 +1,14 @@
-// routes/routine.js
+// IMPORT EXPRESS 
 import express from 'express'
+// IMPORT AUTH 
 import auth from '../middleware/auth.js'
+// IMPORT CONTROLLER WORKOUT 
 import { addWorkout, getWorkout, updateWorkout, deleteWorkout, getWorkoutToday, updateExerciseInWorkout } from '../controllers/WorkoutController.js'
 
+// INITIALISE ROUTER WITH EXPRESS 
 const router = express.Router()
 
+// ASSOCIATE ROUTE AND FUNCTION 
 router.post('/workout', auth, addWorkout)
 
 router.get('/workout', auth, getWorkout)
