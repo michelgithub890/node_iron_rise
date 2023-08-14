@@ -11,6 +11,7 @@ import routineRoutes from './routes/RoutineRoutes.js'
 import exerciseRoutes from './routes/ExercisesRoutes.js'
 import workoutRoutes from './routes/WorkOutRoutes.js'
 import statsRoutes from './routes/StatsRoutes.js'
+import emailRoutes from './routes/EmailRoutes.js'
 
 dotenv.config()
 
@@ -35,6 +36,7 @@ app.use(routineRoutes)
 app.use(exerciseRoutes)
 app.use(workoutRoutes)
 app.use(statsRoutes)
+app.use(emailRoutes)
 
 
 app.use((req, res, next) => {
